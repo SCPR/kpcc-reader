@@ -6,7 +6,3 @@ Kpcc.Store = DS.Store.extend({
         namespace   : "api/v3"
     })
 });
-
-
-
-
