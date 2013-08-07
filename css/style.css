@@ -10,9 +10,17 @@ article {
     border-bottom: 1px solid #aaa;
 }
 
-article footer {
-    margin-top: 15px;
-}
+    article.compact h3 {
+        margin-top: 0;
+    }
+
+    article.compact p {
+        font-size: 1.2em;
+    }
+
+    article footer {
+        margin-top: 15px;
+    }
 
 h1 a,
 h2 a,
@@ -34,4 +42,17 @@ time {
     font-size: 1em;
     font-style: italic;
     color: #b24401;
+}
+
+.thumbnail a {
+    display: block;
+}
+
+.small-asset {
+    max-width: 250px;
+    padding: 0 10px 10px 0;
+}
+
+img {
+    max-width: 100%;
 }

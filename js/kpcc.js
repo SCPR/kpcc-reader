@@ -6,3 +6,14 @@ Kpcc.Store = DS.Store.extend({
         namespace   : "api/v3"
     })
 });
+
+DS.RESTAdapter.map('Kpcc.Article', {
+        assets: { embedded: 'always' }
+    }
+);
+
+DS.RESTAdapter.map('Kpcc.Asset', {
+        thumbnail : { embedded: 'always' },
+        small     : { embedded: 'always' }
+    }
+);

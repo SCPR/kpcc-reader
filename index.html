@@ -29,16 +29,23 @@
   <!-- ARTICLES.INDEX -->
   <script type="text/x-handlebars" id="articles">
     {{#each model}}
-      <article>
-        <header>
-          <h3>{{#linkTo 'article' this}}{{short_title}}{{/linkTo}}</h3>
-          <h5><time>{{date published_at}}</time></h5>
-        </header>
+      <article class='compact'>
+        <div class="row">
+          <div class="col-3 thumbnail">
+            {{#linkTo 'article' this}}
+              <img {{bindAttr src="thumbnail.url"}} />
+            {{/linkTo}}
+          </div>
 
-        {{{teaser}}}
+          <div class="col-9">
+            <h3>{{#linkTo 'article' this}}{{short_title}}{{/linkTo}}</h3>
+            <time>{{date published_at}}</time>
+            <p>{{teaser}}</p>
+            {{#linkTo 'article' this}}Read More...{{/linkTo}}
+          </div>
+        </div>
 
         <footer>
-          {{#linkTo 'article' this}}Read More...{{/linkTo}}
         </footer>
       </article>
     {{/each}}
@@ -52,6 +59,10 @@
         <h2>{{#linkTo 'article' this}}{{title}}{{/linkTo}}</h2>
         <h4>{{byline}} <time>{{date published_at}}</time></h4>
       </header>
+
+      <div class="pull-left small-asset">
+        <img {{bindAttr src="asset.url"}} />
+      </div>
 
       {{{body}}}
 
@@ -75,5 +86,8 @@
   <script src="js/router.js"></script>
   <script src="js/helpers.js"></script>
   <script src="js/models/article.js"></script>
+  <script src="js/models/asset.js"></script>
+  <script src="js/models/asset_thumbnail.js"></script>
+  <script src="js/models/asset_small.js"></script>
 </body>
 </html>
