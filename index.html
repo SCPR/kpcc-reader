@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>KPCC Reader</title>
+
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="shortcut icon" href="http://media.scpr.org/favicon.ico" />
+</head>
+
+<body>
+
+  <!-- APPLICATION LAYOUT -->
+  <script type="text/x-handlebars">
+    <div class="navbar">
+      <a class="navbar-brand" href="#">KPCC Reader</a>
+      <ul class="nav navbar-nav">
+        <li class="active">{{#linkTo 'articles'}}Articles{{/linkTo}}</a></li>
+      </ul>
+    </div>
+
+    <div class="container">
+      {{outlet}}
+    </div>
+  </script>
+
+
+  <!-- ARTICLES.INDEX -->
+  <script type="text/x-handlebars" id="articles">
+    {{#each model}}
+      <article>
+        <header>
+          <h3>{{#linkTo 'article' this}}{{title}}{{/linkTo}}</h3>
+          <h5>{{byline}}</h5>
+        </header>
+
+        {{{teaser}}}
+
+        <footer>
+          {{#linkTo 'article' this}}Read More...{{/linkTo}}
+        </footer>
+      </article>
+    {{/each}}
+  </script>
+
+
+  <!-- ARTICLES.SHOW -->
+  <script type="text/x-handlebars" id="article">
+    {{partial 'article'}}
+  </script>
+
+
+  <!-- ARTICLE PARTIAL -->
+  <script type="text/x-handlebars" id="_article">
+    <article>
+      <header>
+        <h2>{{#linkTo 'article' this}}{{title}}{{/linkTo}}</h2>
+        <h4>{{byline}}</h4>
+      </header>
+
+      {{{body}}}
+
+      <footer>
+        <a {{bindAttr href="public_url"}}>View on KPCC.org</a>
+      </footer>
+    </article>
+  </script>
+
+
+
+  <!-- CORE -->
+  <script src="js/libs/jquery.min.js"></script>
+  <script src="js/libs/handlebars.js"></script>
+  <script src="js/libs/ember.js"></script>
+  <script src="js/libs/ember-data.js"></script>
+
+  <!-- APP -->
+  <script src="js/kpcc.js"></script>
+  <script src="js/router.js"></script>
+  <script src="js/models/article.js"></script>
+</body>
+</html>
