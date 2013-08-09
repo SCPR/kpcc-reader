@@ -5,7 +5,12 @@ Kpcc.Router.map(function() {
 
 
 Kpcc.ArticlesRoute = Ember.Route.extend({
-    model: function(){
-        return Kpcc.Article.find({ types: "news,blogs" });
+    model: function() {
+        Kpcc.Article.find({
+            limit : 10,
+            types : "news,blogs"
+        });
+
+        return Kpcc.Article.all();
     }
 });

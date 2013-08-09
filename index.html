@@ -28,7 +28,7 @@
 
   <!-- ARTICLES.INDEX -->
   <script type="text/x-handlebars" id="articles">
-    {{#each model}}
+    {{#each controller}}
       <article class='compact'>
         <div class="row">
           <div class="col-3 thumbnail">
@@ -85,9 +85,17 @@
   <script src="js/kpcc.js"></script>
   <script src="js/router.js"></script>
   <script src="js/helpers.js"></script>
+
+  <!-- MODELS -->
   <script src="js/models/article.js"></script>
   <script src="js/models/asset.js"></script>
   <script src="js/models/asset_thumbnail.js"></script>
   <script src="js/models/asset_small.js"></script>
+
+  <!-- CONTROLLERS -->
+  <script src="js/controllers/articles_controller.js"></script>
+
+  <!-- VIEWS -->
+  <script src="js/views/articles_view.js"></script>
 </body>
 </html>
