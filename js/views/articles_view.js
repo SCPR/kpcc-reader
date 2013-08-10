@@ -1,6 +1,4 @@
 Kpcc.ArticlesView = Ember.View.extend({
-    scrollIsLocked: false,
-
     didInsertElement: function() {
         var view = this;
         $(window).bind('scroll', function() {
