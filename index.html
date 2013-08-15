@@ -37,13 +37,10 @@
     {{#each controller}}
       <article class='compact'>
         <div class="row">
-          <div class="col-3 thumbnail">
+          <div class="col-12">
             {{#linkTo 'article' this}}
               <img {{bindAttr src="asset.url"}} />
             {{/linkTo}}
-          </div>
-
-          <div class="col-9">
             <h3>{{#linkTo 'article' this}}{{short_title}}{{/linkTo}}</h3>
             <time>{{date published_at}}</time>
             <p>{{teaser}}</p>
