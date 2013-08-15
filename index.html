@@ -41,7 +41,13 @@
             <img {{bindAttr src="asset.url"}} />
           {{/linkTo}}
         </div>
-        <time>{{date published_at}}</time>
+
+        <time>{{relativeDate published_at}}</time>
+
+        {{#if category}}
+          <a href="{{unbound category.public_url}}">{{category.title}}</a>
+        {{/if}}
+
         <h3>{{#linkTo 'article' this}}{{short_title}}{{/linkTo}}</h3>
         <p>{{teaser}}</p>
         {{#linkTo 'article' this classNames="link-follow"}}Read More...{{/linkTo}}
@@ -58,7 +64,14 @@
     <article class="full">
       <header>
         <h2>{{#linkTo 'article' this}}{{title}}{{/linkTo}}</h2>
-        <h4>{{byline}} <time>{{date published_at}}</time></h4>
+        <h4>
+          {{byline}} <time>{{date published_at}}</time>
+
+          {{#if category}}
+            <a href="{{unbound category.public_url}}">{{category.title}}</a>
+          {{/if}}
+        </h4>
+
       </header>
 
       <div class="pull-left small-asset">
@@ -77,10 +90,15 @@
 
   <!-- CORE -->
   <script src="js/libs/jquery.min.js"></script>
-  <script src="js/libs/handlebars.js"></script>
-  <script src="js/libs/ember.js"></script>
-  <script src="js/libs/ember-data.js"></script>
+  <script src="js/libs/handlebars.min.js"></script>
+  <script src="js/libs/ember.min.js"></script>
+  <script src="js/libs/ember-data.min.js"></script>
   <script src="js/libs/moment.min.js"></script>
+
+  <!-- DEVELOPMENT ONLY
+  <script src="js/libs/development/ember.js"></script>
+  <script src="js/libs/development/ember-data.js"></script>
+  -->
 
   <!-- APP -->
   <script src="js/kpcc.js"></script>
