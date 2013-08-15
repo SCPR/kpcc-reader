@@ -15,6 +15,8 @@ DS.RESTAdapter.map('Kpcc.Article', {
 
 DS.RESTAdapter.map('Kpcc.Asset', {
         thumbnail : { embedded: 'always' },
-        small     : { embedded: 'always' }
+        small     : { embedded: 'always' },
+        large     : { embedded: 'always' },
+        full      : { embedded: 'always' }
     }
 );
