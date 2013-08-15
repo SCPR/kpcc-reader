@@ -1,6 +1,5 @@
 Kpcc.ArticlesController = Ember.ArrayController.extend({
-    // Default current page. This gets modified by loadMore.
-    currentPage     : 1,
+    currentPage     : 0,
     limit           : 12,
     types           : "news,blogs",
 
