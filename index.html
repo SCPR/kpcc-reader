@@ -36,9 +36,9 @@
   <script type="text/x-handlebars" id="articles">
     {{#each controller}}
       <article class='compact'>
-        <div class="img-wrapper" style="background-image:url('{{asset.url}}') no-repeat ;">
+        <div class="img-wrapper" style="background:url({{assetUrl 'small' this}}) no-repeat;">
           {{#linkTo 'article' this}}
-            <img {{bindAttr src="asset.url"}} />
+            {{asset "small" this}}
           {{/linkTo}}
         </div>
 
@@ -75,7 +75,7 @@
       </header>
 
       <div class="pull-left small-asset">
-        <img {{bindAttr src="asset.url"}} />
+        {{asset "small" this}}
       </div>
 
       {{{body}}}
@@ -91,9 +91,9 @@
   <!-- CORE -->
   <script src="js/libs/jquery.min.js"></script>
   <script src="js/libs/handlebars.min.js"></script>
+  <script src="js/libs/moment.min.js"></script>
   <script src="js/libs/ember.min.js"></script>
   <script src="js/libs/ember-data.min.js"></script>
-  <script src="js/libs/moment.min.js"></script>
 
   <!-- DEVELOPMENT ONLY
   <script src="js/libs/development/ember.js"></script>
