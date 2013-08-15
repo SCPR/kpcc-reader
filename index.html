@@ -36,17 +36,15 @@
   <script type="text/x-handlebars" id="articles">
     {{#each controller}}
       <article class='compact'>
-        <div class="row">
-          <div class="col-12">
-            {{#linkTo 'article' this}}
-              <img {{bindAttr src="asset.url"}} />
-            {{/linkTo}}
-            <h3>{{#linkTo 'article' this}}{{short_title}}{{/linkTo}}</h3>
-            <time>{{date published_at}}</time>
-            <p>{{teaser}}</p>
-            {{#linkTo 'article' this}}Read More...{{/linkTo}}
-          </div>
+        <div class="img-wrapper" style="background-image:url('{{asset.url}}') no-repeat ;">
+          {{#linkTo 'article' this}}
+            <img {{bindAttr src="asset.url"}} />
+          {{/linkTo}}
         </div>
+        <time>{{date published_at}}</time>
+        <h3>{{#linkTo 'article' this}}{{short_title}}{{/linkTo}}</h3>
+        <p>{{teaser}}</p>
+        {{#linkTo 'article' this classNames="link-follow"}}Read More...{{/linkTo}}
 
         <footer>
         </footer>
@@ -57,7 +55,7 @@
 
   <!-- ARTICLES.SHOW -->
   <script type="text/x-handlebars" id="article">
-    <article>
+    <article class="full">
       <header>
         <h2>{{#linkTo 'article' this}}{{title}}{{/linkTo}}</h2>
         <h4>{{byline}} <time>{{date published_at}}</time></h4>
