@@ -7,6 +7,7 @@ Kpcc.Article = DS.Model.extend({
     body            : DS.attr('string'),
     public_url      : DS.attr('string'),
     assets          : DS.hasMany('Kpcc.Asset'),
+    category        : DS.belongsTo('Kpcc.Category'),
 
     thumbnail: function() {
         if(this.get('assets.length')) {

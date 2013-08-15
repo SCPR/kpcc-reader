@@ -8,13 +8,15 @@ Kpcc.Store = DS.Store.extend({
 });
 
 DS.RESTAdapter.map('Kpcc.Article', {
-        assets: { embedded: 'always' },
-        categories: { embedded: 'always'}
+        assets       : { embedded: 'always' },
+        category     : { embedded: 'always' }
     }
 );
 
 DS.RESTAdapter.map('Kpcc.Asset', {
         thumbnail : { embedded: 'always' },
-        small     : { embedded: 'always' }
+        small     : { embedded: 'always' },
+        large     : { embedded: 'always' },
+        full      : { embedded: 'always' }
     }
 );
