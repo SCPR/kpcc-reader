@@ -1,8 +1,8 @@
 Kpcc.ArticlesController = Ember.ArrayController.extend({
+    // Default current page. This gets modified by loadMore.
     currentPage     : 1,
     limit           : 10,
     types           : "news,blogs",
-
 
     loadMore: function() {
         if(this.get('isLoading')) return;
@@ -20,5 +20,5 @@ Kpcc.ArticlesController = Ember.ArrayController.extend({
         }).then(function(){
             self.set('isLoading', false)
         });
-    }
+    },
 });

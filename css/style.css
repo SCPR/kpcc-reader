@@ -1,21 +1,40 @@
+body {
+    font-family:"Avenir Next", "Roboto", Helvetica, Arial, sans-serif;
+}
+
 .container {
-    padding-left: 20px;
-    padding-right: 20px;
-    max-width: 750px;
+    padding-left: 10px;
+    padding-right: 10px;
+    max-width: 1390px;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
 }
 
 article {
     padding-bottom: 10px;
     margin-bottom: 20px;
-    border-bottom: 1px solid #aaa;
+    border-bottom: 1px solid #ddd;
 }
 
     article.compact h3 {
+        font-size:2em;
         margin-top: 0;
     }
 
     article.compact p {
-        font-size: 1.2em;
+        font-family:"Avenir Next", "Roboto", Helvetica, Arial, sans-serif;
+        font-size: 1.1em;
+    }
+
+    article.compact .img-wrapper {
+        border-bottom:5px solid #00b9f3;
+        display:block;
+        margin-bottom:1em;
+    }
+
+    article.compact .link-follow {
+        color:#00b9f3;
+        font-weight:600;
     }
 
     article footer {
@@ -29,19 +48,27 @@ h4 a,
 h5 a,
 h6 a {
     color: #000;
+    font-family:"Avenir Next Condensed", "Roboto", Helvetica, "Arial Narrow", sans-serif;
+    font-style:normal;
+    font-weight:600;
 }
 
-
+h2 {
+    font-size:2.8em;
+}
 p {
     margin: 0 0 1em 0;
-    font-family: Georgia, serif;
+    font-family: Georgia, "Droid Serif", serif;
     font-size: 1.5em;
 }
 
 time {
-    font-size: 1em;
-    font-style: italic;
-    color: #b24401;
+    display:block;
+    font-size: 0.86em;
+    font-weight:400;
+    color: #bababa;
+    margin-bottom:0.5em;
+    text-transform:uppercase;
 }
 
 .thumbnail a {
@@ -55,4 +82,37 @@ time {
 
 img {
     max-width: 100%;
+}
+
+@media (min-width:480px) {
+    .container {
+        padding-right:20px;
+        padding-left:20px;
+    }
+    article.compact {
+        float:left;
+        width:46%;
+        margin-right:2%;
+        min-height:530px;
+    }
+}
+@media (min-width:768px) {
+    article.full {
+        margin:0 auto;
+        max-width:650px;
+    }
+    article.compact {
+        float:left;
+        width:31%;
+        margin-right:2%;
+        min-height:560px;
+    }
+    article.compact .img-wrapper {
+        max-height: 253px;
+        overflow: hidden;
+        max-width: 450px;
+    }
+    article.compact .img-wrapper img {
+        /*opacity:0;*/
+    }
 }

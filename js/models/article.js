@@ -8,17 +8,4 @@ Kpcc.Article = DS.Model.extend({
     public_url      : DS.attr('string'),
     assets          : DS.hasMany('Kpcc.Asset'),
     category        : DS.belongsTo('Kpcc.Category'),
-
-    thumbnail: function() {
-        if(this.get('assets.length')) {
-            return this.get('assets.firstObject.thumbnail');
-        }
-    }.property('assets'),
-
-    asset: function() {
-        if(this.get('assets.length')) {
-            return this.get('assets.firstObject.small');
-        }
-    }.property('assets')
-
 });
