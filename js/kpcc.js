@@ -8,7 +8,8 @@ Kpcc.Store = DS.Store.extend({
 });
 
 DS.RESTAdapter.map('Kpcc.Article', {
-        assets: { embedded: 'always' }
+        assets       : { embedded: 'always' },
+        category     : { embedded: 'always' }
     }
 );
 
