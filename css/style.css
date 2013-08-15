@@ -2,6 +2,21 @@ body {
     font-family:"Avenir Next", "Roboto", Helvetica, Arial, sans-serif;
 }
 
+.navbar {
+    background:#222627;
+    border-radius:0;
+}
+    .navbar-brand {
+        background:url('../images/reader-logo.png') no-repeat 0 0;
+        color:#fff;
+        display:block;
+        float:none;
+        margin:13px auto 0;
+        text-indent:-9999px;
+        width:210px;
+        height:22px;
+    }
+
 .container {
     padding-left: 10px;
     padding-right: 10px;
@@ -11,8 +26,8 @@ body {
 }
 
 article {
-    padding-bottom: 10px;
-    margin-bottom: 20px;
+    padding-bottom: 1em;
+    margin-bottom: 1.5625em;
     border-bottom: 1px solid #ddd;
 }
 
@@ -30,7 +45,20 @@ article {
         border-bottom:5px solid #00b9f3;
         display:block;
         margin-bottom:1em;
+        position:relative;
     }
+
+        .img-wrapper .category {
+            background:#00b9f3;
+            color:#fff;
+            display:inline-block;
+            font-size:.875em;
+            padding:3px 8px 0;
+            position:absolute;
+            left:0;
+            bottom:0;
+            text-transform:uppercase;
+        }
 
     article.compact .link-follow {
         color:#00b9f3;
@@ -96,7 +124,7 @@ img {
         min-height:530px;
     }
 }
-@media (min-width:768px) {
+@media (min-width:767px) {
     article.full {
         margin:0 auto;
         max-width:650px;
@@ -105,14 +133,40 @@ img {
         float:left;
         width:31%;
         margin-right:2%;
-        min-height:560px;
+        min-height:500px;
+        max-height:500px;
+        overflow:hidden;
+        position:relative;
     }
     article.compact .img-wrapper {
-        max-height: 253px;
+        background:#efefef;
+        max-height: 232px;
+        min-height: 232px;
         overflow: hidden;
         max-width: 450px;
     }
     article.compact .img-wrapper img {
-        /*opacity:0;*/
+        opacity:0;
+    }
+    article.compact footer {
+        background:
+         linear-gradient(
+          bottom,
+          rgba(255,255,255,1) 0%,
+          rgba(255,255,255,0) 100%
+        );
+        background:-webkit-linear-gradient(bottom, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+        border-bottom: 1em;
+        position:absolute;
+        left:0;
+        right:0;
+        bottom:0;
+        height:4em;
+    }
+}
+
+@media (min-width:768px) and (max-width:1000px) {
+    article.compact {
+        font-size:
     }
 }

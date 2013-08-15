@@ -20,10 +20,9 @@
   <!-- APPLICATION LAYOUT -->
   <script type="text/x-handlebars">
     <div class="navbar">
-      <a class="navbar-brand" href="#">KPCC Reader</a>
-      <ul class="nav navbar-nav">
-        <li class="active">{{#linkTo 'articles'}}Articles{{/linkTo}}</a></li>
-      </ul>
+      <div class="container">
+        <a class="navbar-brand" href="#">KPCC Reader</a>
+      </div>
     </div>
 
     <div class="container">
@@ -36,17 +35,18 @@
   <script type="text/x-handlebars" id="articles">
     {{#each controller}}
       <article class='compact'>
-        <div class="img-wrapper" style="background:url({{assetUrl 'small' this}}) no-repeat;">
+        <figure class="img-wrapper" style="background:url({{assetUrl 'small' this}}) no-repeat;background-size:cover;">
           {{#linkTo 'article' this}}
             {{asset "small" this}}
           {{/linkTo}}
-        </div>
+          <div class="category">
+            {{#if category}}
+              {{category.title}}
+            {{/if}}
+          </div>
+        </figure>
 
         <time>{{relativeDate published_at}}</time>
-
-        {{#if category}}
-          <a href="{{unbound category.public_url}}">{{category.title}}</a>
-        {{/if}}
 
         <h3>{{#linkTo 'article' this}}{{short_title}}{{/linkTo}}</h3>
         <p>{{teaser}}</p>
@@ -74,9 +74,7 @@
 
       </header>
 
-      <div class="pull-left small-asset">
-        {{asset "small" this}}
-      </div>
+      {{asset "small" this}}
 
       {{{body}}}
 
