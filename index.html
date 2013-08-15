@@ -21,9 +21,6 @@
   <script type="text/x-handlebars">
     <div class="navbar">
       <a class="navbar-brand" href="#">KPCC Reader</a>
-      <ul class="nav navbar-nav">
-        <li class="active">{{#linkTo 'articles'}}Articles{{/linkTo}}</a></li>
-      </ul>
     </div>
 
     <div class="container">
@@ -36,7 +33,7 @@
   <script type="text/x-handlebars" id="articles">
     {{#each controller}}
       <article class='compact'>
-        <div class="img-wrapper" style="background:url({{assetUrl 'small' this}}) no-repeat;">
+        <div class="img-wrapper">
           {{#linkTo 'article' this}}
             {{asset "small" this}}
           {{/linkTo}}
