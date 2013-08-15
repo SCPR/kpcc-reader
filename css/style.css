@@ -11,6 +11,7 @@ article {
 }
 
     article.compact h3 {
+        font-size:2em;
         margin-top: 0;
     }
 
