@@ -27,6 +27,7 @@ body {
     -webkit-overflow-scrolling: touch;
 }
 
+
 article {
     padding-bottom: 1em;
     margin-bottom: 1.5625em;
@@ -67,9 +68,6 @@ article {
         font-weight:600;
     }
 
-    article footer {
-        margin-top: 15px;
-    }
 
 h1 a,
 h2 a,
@@ -86,6 +84,7 @@ h6 a {
 h2 {
     font-size:2.8em;
 }
+
 p {
     margin: 0 0 1em 0;
     font-family: Georgia, "Droid Serif", serif;
@@ -163,7 +162,6 @@ img {
         left:0;
         right:0;
         bottom:0;
-        height:4em;
     }
 }
 

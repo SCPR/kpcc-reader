@@ -33,26 +33,29 @@
   <script type="text/x-handlebars" id="articles">
     {{#each controller itemController='article'}}
       <article class='compact'>
-        <figure class="img-wrapper" {{bindAttr style="imgWrapperStyle"}}>
-          {{#linkTo 'article' this}}
-            {{asset "small" this}}
-          {{/linkTo}}
+        <header>
+          <figure class="img-wrapper" {{bindAttr style="imgWrapperStyle"}}>
+            {{#linkTo 'article' this}}
+              {{asset "small" this}}
+            {{/linkTo}}
 
-          {{#if category}}
-          <div class="category">
-              {{category.title}}
-          </div>
-          {{/if}}
+            {{#if category}}
+            <div class="category">
+                {{category.title}}
+            </div>
+            {{/if}}
 
-        </figure>
+          </figure>
 
-        <time>{{relativeDate published_at}}</time>
+          <time>{{relativeDate published_at}}</time>
 
-        <h4>{{#linkTo 'article' this}}{{short_title}}{{/linkTo}}</h4>
+          <h4>{{#linkTo 'article' this}}{{short_title}}{{/linkTo}}</h4>
+        </header>
+
         <p>{{{teaser}}}</p>
-        {{#linkTo 'article' this classNames="link-follow"}}Read More...{{/linkTo}}
 
         <footer>
+          {{#linkTo 'article' this classNames="link-follow"}}Read More...{{/linkTo}}
         </footer>
       </article>
     {{/each}}
@@ -90,8 +93,15 @@
   <script src="js/libs/jquery.min.js"></script>
   <script src="js/libs/handlebars.min.js"></script>
   <script src="js/libs/moment.min.js"></script>
-  <!--<script src="js/libs/ember.min.js"></script>
-  <script src="js/libs/ember-data.min.js"></script>-->
+
+  <!--NOTE: The production versions have a problem in
+      Chrome for Android in production. It could just be
+      a dumb cache issue, but for now we're using the
+      development versions.
+
+  <script src="js/libs/ember.min.js"></script>
+  <script src="js/libs/ember-data.min.js"></script>
+  -->
 
   <!-- DEVELOPMENT ONLY -->
   <script src="js/libs/development/ember.js"></script>
