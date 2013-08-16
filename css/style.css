@@ -169,13 +169,14 @@ img {
 
 @media (min-width:768px) and (max-width:1000px) {
     article.compact {
-        font-size:
     }
 }
 
 /* Hi-DPI Media Query */
 @media only screen and (-webkit-min-device-pixel-ratio: 2) {
      .navbar-brand {
-        background:url('../images/reader-logo@2x.png') no-repeat 50% 0;
+        background-image:url('../images/reader-logo@2x.png');
+        background-repeat:no-repeat;
+        background-position:50% 0;
     }
 }
