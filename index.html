@@ -37,11 +37,13 @@
           {{#linkTo 'article' this}}
             {{asset "small" this}}
           {{/linkTo}}
+
+          {{#if category}}
           <div class="category">
-            {{#if category}}
               {{category.title}}
-            {{/if}}
           </div>
+          {{/if}}
+
         </figure>
 
         <time>{{relativeDate published_at}}</time>
