@@ -31,9 +31,9 @@
 
   <!-- ARTICLES.INDEX -->
   <script type="text/x-handlebars" id="articles">
-    {{#each controller}}
+    {{#each controller itemController='article'}}
       <article class='compact'>
-        <figure class="img-wrapper" style="background:url({{assetUrl 'small' this}}) no-repeat;background-size:cover;">
+        <figure class="img-wrapper" {{bindAttr style="imgWrapperStyle"}}>
           {{#linkTo 'article' this}}
             {{asset "small" this}}
           {{/linkTo}}
@@ -48,8 +48,8 @@
 
         <time>{{relativeDate published_at}}</time>
 
-        <h3>{{#linkTo 'article' this}}{{short_title}}{{/linkTo}}</h3>
-        <p>{{teaser}}</p>
+        <h4>{{#linkTo 'article' this}}{{short_title}}{{/linkTo}}</h4>
+        <p>{{{teaser}}}</p>
         {{#linkTo 'article' this classNames="link-follow"}}Read More...{{/linkTo}}
 
         <footer>
@@ -119,6 +119,7 @@
 
   <!-- CONTROLLERS -->
   <script src="js/controllers/articles_controller.js"></script>
+  <script src="js/controllers/article_controller.js"></script>
 
   <!-- VIEWS -->
   <script src="js/views/articles_view.js"></script>
