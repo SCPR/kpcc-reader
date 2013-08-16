@@ -8,7 +8,8 @@ body {
 }
     .navbar-brand {
         background:url('../images/reader-logo.png') no-repeat 50% 0;
-        background-size: 210px 22px;
+        /* The !important flag is needed for a bug in Chrome for Android */
+        background-size: 210px 22px !important;
         color:#fff;
         display:block;
         float:none;
