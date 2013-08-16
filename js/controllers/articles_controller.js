@@ -3,6 +3,20 @@ Kpcc.ArticlesController = Ember.ArrayController.extend({
     limit           : 12,
     types           : "news,blogs",
 
+    sortAscending   : false,
+    sortProperties  : ['published_at'],
+
+    // FIXME: This doesn't remove articles which have been taken out of
+    // the API for some reason (deleted or unpublished).
+    checkForNewRecords: function() {
+        console.log("checking for new records");
+        Kpcc.Article.find({
+            page    : 1,
+            limit   : this.get('limit'),
+            type    : this.get('types')
+        });
+    },
+
     loadMore: function() {
         if(this.get('isLoading')) return;
 
@@ -19,5 +33,5 @@ Kpcc.ArticlesController = Ember.ArrayController.extend({
         }).then(function(){
             self.set('isLoading', false)
         });
-    },
+    }
 });
