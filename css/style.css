@@ -1,94 +1,10 @@
+/* GLOBAL STYLES */
+
 body {
     background:#e9edee;
     font-family:"Avenir Next", "Roboto", Helvetica, Arial, sans-serif;
     text-rendering: optimizeLegibility;
 }
-
-.navbar {
-    background:#222627;
-    border-radius:0;
-}
-    .navbar-brand {
-        background:url('../images/reader-logo.png') no-repeat 50% 0;
-        /* The !important flag is needed for a bug in Chrome for Android */
-        background-size: 210px 22px !important;
-        color:#fff;
-        display:block;
-        float:none;
-        margin:13px auto 0;
-        text-indent:-9999px;
-        min-width:210px;
-        height:22px;
-    }
-
-.container {
-    padding-left: 10px;
-    padding-right: 10px;
-    max-width: 1390px;
-    overflow: auto;
-    -webkit-overflow-scrolling: touch;
-}
-
-a.article-link:hover {
-    text-decoration:none;
-}
-
-article {
-    padding-bottom: 1em;
-    margin-bottom: 1.5625em;
-}
-    
-    article.compact {
-        background:#fff;
-        border: 1px solid #dee4e6;
-        padding:0.8em;
-    }
-        article.compact:hover {
-            border:1px solid #b5babc;
-        }
-
-      article.compact h4 {
-          font-size:1.8em;
-          margin:0 0 0.8em;
-      }
-
-      article.compact p {
-          color:#666;
-          font-family:"Avenir Next", "Roboto", Helvetica, Arial, sans-serif;
-          font-size: 1.1em;
-          line-height:1.4em;
-      }
-
-      article.compact .img-wrapper {
-          border-bottom:5px solid #00b9f3;
-          display:block;
-          margin-bottom:1em;
-          position:relative;
-      }
-
-          .img-wrapper .category {
-              background:#00b9f3;
-              color:#fff;
-              display:inline-block;
-              font-size:.875em;
-              padding:3px 8px 0;
-              position:absolute;
-              left:0;
-              bottom:0;
-              text-transform:uppercase;
-          }
-
-      article.compact .link-follow {
-          color:#00b9f3;
-          font-weight:600;
-      }
-
-    article.full img {
-        margin-bottom:2em;
-    }
-    article.full a {
-        color:#417fb5;
-    }
 
 h1,
 h2,
@@ -124,6 +40,110 @@ time {
     margin-bottom:0.5em;
     text-transform:uppercase;
 }
+
+.navbar {
+    background:#222627;
+    border-radius:0;
+}
+    .navbar-brand {
+        background:url('../images/reader-logo.png') no-repeat 50% 0;
+        /* The !important flag is needed for a bug in Chrome for Android */
+        background-size: 210px 22px !important;
+        color:#fff;
+        display:block;
+        float:none;
+        margin:13px auto 0;
+        text-indent:-9999px;
+        min-width:210px;
+        height:22px;
+    }
+
+.container {
+    padding-left: 10px;
+    padding-right: 10px;
+    max-width: 1390px;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* INDEX-SPECIFIC STYLES */
+
+.progress-loader {
+    color:#abb1b2;
+    display:block;
+    font-family:"Avenir Next", "Roboto", Helvetica, Arial, sans-serif;
+    font-weight:500;
+    text-align:center;
+    text-transform:uppercase;
+    width:100%;
+}
+
+/* ARTICLE STYLES */
+
+a.article-link:hover {
+    text-decoration:none;
+}
+
+article {
+    padding-bottom: 1em;
+    margin-bottom: 1.5625em;
+}
+    
+    article.compact {
+        background:#fff;
+        border: 1px solid #dee4e6;
+        padding:0.8em;
+    }
+        article.compact:hover {
+            border:1px solid #b5babc;
+        }
+
+      article.compact h4 {
+          font-size:1.8em;
+          margin:0 0 0.8em;
+      }
+
+      article.compact p {
+          color:#666;
+          font-family:"Avenir Next", "Roboto", Helvetica, Arial, sans-serif;
+          font-size: 1.1em;
+          line-height:1.4em;
+      }
+
+      article.compact .img-wrapper {
+          background:#efefef url('../images/bg-blank-asset@2x.png') no-repeat center center;
+          background-size:100% auto;
+          border-bottom:5px solid #00b9f3;
+          display:block;
+          margin-bottom:1em;
+          position:relative;
+      }
+
+          .img-wrapper .category {
+              background:#00b9f3;
+              color:#fff;
+              display:inline-block;
+              font-size:.875em;
+              padding:3px 8px 0;
+              position:absolute;
+              left:0;
+              bottom:0;
+              text-transform:uppercase;
+          }
+
+      article.compact .link-follow {
+          color:#00b9f3;
+          font-weight:600;
+      }
+
+    article.full img {
+        margin-bottom:2em;
+    }
+    article.full a {
+        color:#417fb5;
+    }
+
+
 
 .thumbnail a {
     display: block;
@@ -161,7 +181,6 @@ time {
         position:relative;
     }
     article.compact .img-wrapper {
-        background:#efefef;
         max-height: 232px;
         min-height: 232px;
         overflow: hidden;

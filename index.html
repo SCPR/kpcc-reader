@@ -31,6 +31,7 @@
 
   <!-- ARTICLES.INDEX -->
   <script type="text/x-handlebars" id="articles">
+    <div class="articles-list">
     {{#each controller itemController='article'}}
       {{#linkTo 'article' this classNames="article-link"}}
         <article class='compact'>
@@ -60,6 +61,8 @@
         </article>
       {{/linkTo}}
     {{/each}}
+    </div>
+    <p class="progress-loader">Loading Articles</p>
   </script>
 
 
