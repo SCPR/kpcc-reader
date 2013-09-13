@@ -1,6 +1,7 @@
 body {
     background:#e9edee;
     font-family:"Avenir Next", "Roboto", Helvetica, Arial, sans-serif;
+    text-rendering: optimizeLegibility;
 }
 
 .navbar {
@@ -28,6 +29,9 @@ body {
     -webkit-overflow-scrolling: touch;
 }
 
+a.article-link:hover {
+    text-decoration:none;
+}
 
 article {
     padding-bottom: 1em;
@@ -37,20 +41,22 @@ article {
     article.compact {
         background:#fff;
         border: 1px solid #dee4e6;
-        padding:0.5em;
+        padding:0.8em;
     }
         article.compact:hover {
-            border:1px solid #ccd1d3;
+            border:1px solid #b5babc;
         }
 
-      article.compact h3 {
-          font-size:2em;
-          margin-top: 0;
+      article.compact h4 {
+          font-size:1.8em;
+          margin:0 0 0.8em;
       }
 
       article.compact p {
+          color:#666;
           font-family:"Avenir Next", "Roboto", Helvetica, Arial, sans-serif;
           font-size: 1.1em;
+          line-height:1.4em;
       }
 
       article.compact .img-wrapper {
@@ -177,6 +183,7 @@ time {
         left:0;
         right:0;
         bottom:0;
+        height:40px;
     }
 }
 

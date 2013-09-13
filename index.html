@@ -32,7 +32,7 @@
   <!-- ARTICLES.INDEX -->
   <script type="text/x-handlebars" id="articles">
     {{#each controller itemController='article'}}
-      {{#linkTo 'article' this}}
+      {{#linkTo 'article' this classNames="article-link"}}
         <article class='compact'>
           <header>
             <figure class="img-wrapper" {{bindAttr style="imgWrapperStyle"}}>
@@ -53,6 +53,10 @@
           </header>
 
           <p>{{{teaser}}}</p>
+
+
+          <footer>
+          </footer>
         </article>
       {{/linkTo}}
     {{/each}}
