@@ -32,32 +32,29 @@
   <!-- ARTICLES.INDEX -->
   <script type="text/x-handlebars" id="articles">
     {{#each controller itemController='article'}}
-      <article class='compact'>
-        <header>
-          <figure class="img-wrapper" {{bindAttr style="imgWrapperStyle"}}>
-            {{#linkTo 'article' this}}
+      {{#linkTo 'article' this}}
+        <article class='compact'>
+          <header>
+            <figure class="img-wrapper" {{bindAttr style="imgWrapperStyle"}}>
+              
               {{asset "small" this}}
-            {{/linkTo}}
 
-            {{#if category}}
-            <div class="category">
-                {{category.title}}
-            </div>
-            {{/if}}
+              {{#if category}}
+              <div class="category">
+                  {{category.title}}
+              </div>
+              {{/if}}
 
-          </figure>
+            </figure>
 
-          <time>{{relativeDate published_at}}</time>
+            <time>{{relativeDate published_at}}</time>
 
-          <h4>{{#linkTo 'article' this}}{{short_title}}{{/linkTo}}</h4>
-        </header>
+            <h4>{{short_title}}</h4>
+          </header>
 
-        <p>{{{teaser}}}</p>
-
-        <footer>
-          {{#linkTo 'article' this classNames="link-follow"}}Read More...{{/linkTo}}
-        </footer>
-      </article>
+          <p>{{{teaser}}}</p>
+        </article>
+      {{/linkTo}}
     {{/each}}
   </script>
 
@@ -77,7 +74,7 @@
 
       </header>
 
-      {{asset "small" this}}
+      {{asset "large" this}}
 
       {{{body}}}
 
