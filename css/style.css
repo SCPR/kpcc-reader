@@ -3,8 +3,13 @@
 body {
     background:#e9edee;
     font-family:"Avenir Next", "Roboto", Helvetica, Arial, sans-serif;
+    font-size:
     text-rendering: optimizeLegibility;
 }
+
+    body.article {
+        background:#fff;
+    }
 
 h1,
 h2,
@@ -22,12 +27,6 @@ h2 {
     font-size:2.8em;
 }
 
-p {
-    margin: 0 0 1em 0;
-    font-family: "Droid Serif", Georgia, serif;
-    font-size: 1.5em;
-    line-height:1.75em;
-}
 img {
     max-width: 100%;
 }
@@ -187,20 +186,26 @@ article {
         margin-bottom:2em;
     }
 
-    article.full a {
+    .article-body a {
         color:#417fb5;
     }
 
-    article.full blockquote {
+    .article-body p, .article-body ul {
+        margin: 0 0 1em 0;
+        font-family: Georgia, "Droid Serif", serif;
+        font-size: 1.31em;
+        line-height:1.7em;
+    }
+
+    .article-body  blockquote {
         border-left:5px solid #c6cbcc;
     }
 
-        article.full blockquote p {
+        .article-body  blockquote p {
             color:#666b6c;
             font-style:italic;
             line-height:1.8em;
         }
-
 
 .thumbnail a {
     display: block;

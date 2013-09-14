@@ -4,6 +4,7 @@ Kpcc.ArticlesView = Ember.View.extend({
         $(window).bind('scroll', function() {
             view.didScroll();
         });
+        $('body').removeClass('article');
     },
 
     didScroll: function() {
