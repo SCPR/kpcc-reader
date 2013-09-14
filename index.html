@@ -31,7 +31,7 @@
 
   <!-- ARTICLES.INDEX -->
   <script type="text/x-handlebars" id="articles">
-    <div class="articles-list">
+    <div class="articles-list group">
     {{#each controller itemController='article'}}
       {{#linkTo 'article' this classNames="article-link"}}
         <article class='compact'>
@@ -70,15 +70,18 @@
   <script type="text/x-handlebars" id="article">
     <article class="full">
       <header>
-        <h2>{{#linkTo 'article' this}}{{title}}{{/linkTo}}</h2>
-        <h4>
-          {{byline}} <time>{{date published_at}}</time>
-
-          {{#if category}}
+        {{#if category}}
+          <aside class="category">
             <a href="{{unbound category.public_url}}">{{category.title}}</a>
-          {{/if}}
-        </h4>
-
+          </aside>
+        {{/if}}
+        <h2>{{title}}</h2>
+        <aside class="byline">
+          <ul>
+            <li>{{byline}}</li>
+            <li><time>{{date published_at}}</time></li>
+          </ul>
+        </aside>
       </header>
 
       {{asset "large" this}}
@@ -86,7 +89,7 @@
       {{{body}}}
 
       <footer>
-        <a {{bindAttr href="public_url"}}>View on KPCC.org</a>
+        <a {{bindAttr href="public_url"}}>View this story on KPCC.org</a>
       </footer>
     </article>
   </script>
