@@ -191,6 +191,15 @@ article {
         color:#417fb5;
     }
 
+    article.full blockquote {
+        border-left:5px solid #c6cbcc;
+    }
+
+        article.full blockquote p {
+            color:#666b6c;
+            font-style:italic;
+            line-height:1.8em;
+        }
 
 
 .thumbnail a {
