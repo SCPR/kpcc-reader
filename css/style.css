@@ -2,6 +2,11 @@ body {
     font-family:"Avenir Next", "Roboto", Helvetica, Arial, sans-serif;
 }
 
+audio {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
 .navbar {
     background:#222627;
     border-radius:0;

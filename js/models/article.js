@@ -7,5 +7,6 @@ Kpcc.Article = DS.Model.extend({
     body            : DS.attr('string'),
     public_url      : DS.attr('string'),
     assets          : DS.hasMany('Kpcc.Asset'),
+    audio           : DS.hasMany('Kpcc.Audio'),
     category        : DS.belongsTo('Kpcc.Category'),
 });

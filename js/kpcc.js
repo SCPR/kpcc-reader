@@ -9,6 +9,7 @@ Kpcc.Store = DS.Store.extend({
 
 DS.RESTAdapter.map('Kpcc.Article', {
         assets       : { embedded: 'always' },
+        audio        : { embedded: 'always' },
         category     : { embedded: 'always' }
     }
 );
