@@ -31,34 +31,38 @@
 
   <!-- ARTICLES.INDEX -->
   <script type="text/x-handlebars" id="articles">
+    <div class="articles-list group">
     {{#each controller itemController='article'}}
-      <article class='compact'>
-        <header>
-          <figure class="img-wrapper" {{bindAttr style="imgWrapperStyle"}}>
-            {{#linkTo 'article' this}}
+      {{#linkTo 'article' this classNames="article-link"}}
+        <article class='compact'>
+          <header>
+            <figure class="img-wrapper" {{bindAttr style="imgWrapperStyle"}}>
+              
               {{asset "small" this}}
-            {{/linkTo}}
 
-            {{#if category}}
-            <div class="category">
-                {{category.title}}
-            </div>
-            {{/if}}
+              {{#if category}}
+              <div class="category">
+                  {{category.title}}
+              </div>
+              {{/if}}
 
-          </figure>
+            </figure>
 
-          <time>{{relativeDate published_at}}</time>
+            <time>{{relativeDate published_at}}</time>
 
-          <h4>{{#linkTo 'article' this}}{{short_title}}{{/linkTo}}</h4>
-        </header>
+            <h4>{{short_title}}</h4>
+          </header>
 
-        <p>{{{teaser}}}</p>
+          <p>{{{teaser}}}</p>
 
-        <footer>
-          {{#linkTo 'article' this classNames="link-follow"}}Read More...{{/linkTo}}
-        </footer>
-      </article>
+
+          <footer>
+          </footer>
+        </article>
+      {{/linkTo}}
     {{/each}}
+    </div>
+    <p class="progress-loader">Loading Articles</p>
   </script>
 
 
@@ -66,24 +70,29 @@
   <script type="text/x-handlebars" id="article">
     <article class="full">
       <header>
-        <h2>{{#linkTo 'article' this}}{{title}}{{/linkTo}}</h2>
-        <h4>
-          {{byline}} <time>{{date published_at}}</time>
-
-          {{#if category}}
+        {{#if category}}
+          <aside class="category">
             <a href="{{unbound category.public_url}}">{{category.title}}</a>
-          {{/if}}
-        </h4>
-
+          </aside>
+        {{/if}}
+        <h2>{{title}}</h2>
+        <aside class="byline">
+          <ul>
+            <li>{{byline}}</li>
+            <li><time>{{date published_at}}</time></li>
+          </ul>
+        </aside>
       </header>
 
       {{asset "large" this}}
       {{audio this}}
 
-      {{{body}}}
+      <div class="article-body">
+        {{{body}}}
+      </div>
 
       <footer>
-        <a {{bindAttr href="public_url"}}>View on KPCC.org</a>
+        <a {{bindAttr href="public_url"}}>View this story on KPCC.org</a>
       </footer>
     </article>
   </script>
