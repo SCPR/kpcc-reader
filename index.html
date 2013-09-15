@@ -49,6 +49,9 @@
             </figure>
 
             <time>{{relativeDate published_at}}</time>
+            {{#if audio.length}}
+              <span class="audio-icon">Audio</span>
+            {{/if}}
 
             <h4>{{short_title}}</h4>
           </header>

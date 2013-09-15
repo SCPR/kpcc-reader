@@ -32,7 +32,7 @@ img {
 }
 
 time {
-    display:block;
+    display:inline-block;
     font-size: 0.86em;
     font-weight:400;
     color: #bababa;
@@ -43,6 +43,16 @@ time {
 audio {
     width: 100%;
     margin-bottom: 20px;
+}
+
+.audio-icon {
+    display: inline-block;
+    float: right;
+    width: 20px;
+    height: 20px;
+    background:url('../images/audio-icon.png') no-repeat 0 0;
+    background-size: contain;
+    text-indent: -9999px;
 }
 
 .navbar {
