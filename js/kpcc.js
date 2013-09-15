@@ -21,3 +21,12 @@ DS.RESTAdapter.map('Kpcc.Asset', {
         full      : { embedded: 'always' }
     }
 );
+
+
+Kpcc.ApplicationSerializer = DS.RESTSerializer.extend({
+  normalizePayload: function(type, payload) {
+    delete payload.version;
+    delete payload.status;
+    return payload;
+  }
+});
