@@ -205,6 +205,13 @@ article {
         margin-bottom:2em;
     }
 
+    article.full hr {
+        background:#DEE4E5;
+        border:0;
+        height:1px;
+        margin-bottom:0;
+    }
+
     .article-body a {
         color:#417fb5;
     }
@@ -224,6 +231,47 @@ article {
             color:#666b6c;
             font-style:italic;
             line-height:1.8em;
+        }
+
+    article.full .more-articles {
+        background:#F2F6F6;
+    }
+
+    article.full .more-articles ul {
+        list-style:none;
+        margin:0;
+        padding:0;
+        position:relative;
+    }
+
+        article.full .more-articles ul li {
+            margin:5px 0;
+        }
+
+            article.full .more-articles ul li:nth-child(1) {
+                border-bottom:1px solid #DFE2E3;
+            }
+
+            article.full .more-articles ul li a {
+                display:block;
+                padding:10px;
+            }
+
+            article.full .more-articles ul li a:hover {
+                background:#DEE4E5;
+                text-decoration:none;
+            }
+
+        article.full .more-articles h6 {
+            color:#6C7579;
+            font-family:"Avenir Next", Helvetica, sans-serif;
+            font-weight:400;
+            text-transform:uppercase;
+        }
+
+        article.full .more-articles h4 {
+            color:#1e1e1e;
+            font-size:1.4em;
         }
 
 .thumbnail a {
@@ -257,9 +305,48 @@ article {
     }
 
     article.full {
-        margin:0 auto;
+        margin:0 auto 4em;
         max-width:650px;
     }
+
+        article.full hr {
+            margin-bottom:1em;
+        }
+        
+        article.full .more-articles {
+            background:transparent;
+        }
+
+        article.full .more-articles ul:after {
+              content: "";
+              display: table;
+              clear: both;
+        }
+        
+        article.full .more-articles ul:before {
+            background:#DEE4E5;
+            content:"";
+            display:block;
+            position:absolute;
+            left:50%;
+            top:0;
+            height:100px;
+            width:1px;
+        }
+
+            article.full .more-articles ul li {
+                float:left;
+                width:48%;
+            }
+
+                article.full .more-articles ul li:nth-child(1) {
+                    border-bottom:0;
+                    margin-right:4%;
+                }
+
+                article.full .more-articles h6 {
+                    color:#00b9f3;
+                }
 
     .article-body p, .article-body ul {
         line-height:1.7em;
@@ -297,11 +384,6 @@ article {
         right:0;
         bottom:0;
         height:40px;
-    }
-}
-
-@media (min-width:768px) and (max-width:1000px) {
-    article.compact {
     }
 }
 
