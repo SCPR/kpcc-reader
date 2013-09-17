@@ -4,6 +4,13 @@ Kpcc.Router.map(function() {
 });
 
 
+Kpcc.ArticleRoute = Ember.Route.extend({
+    model: function(params) {
+        return Kpcc.Article.find(params.article_id);
+    }
+});
+
+
 Kpcc.ArticlesRoute = Ember.Route.extend({
     model: function() {
         this.controllerFor('articles').loadMore()
