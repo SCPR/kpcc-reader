@@ -1,7 +1,7 @@
 Kpcc.ArticlesController = Ember.ArrayController.extend({
     currentPage     : 0,
     limit           : 12,
-    types           : "news,blogs",
+    types           : "news,blogs,segments",
 
     sortAscending   : false,
     sortProperties  : ['published_at'],
