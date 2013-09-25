@@ -58,19 +58,32 @@ audio {
 .navbar {
     background:#222627;
     border-radius:0;
+    position: relative;
 }
-    .navbar-brand {
-        background:url('../images/reader-logo.png') no-repeat 50% 0;
-        /* The !important flag is needed for a bug in Chrome for Android */
-        background-size: 210px 22px !important;
-        color:#fff;
-        display:block;
-        float:none;
-        margin:13px auto 0;
-        text-indent:-9999px;
-        min-width:210px;
-        height:22px;
-    }
+
+.navbar-brand {
+    background:url('../images/reader-logo.png') no-repeat 50% 0;
+    /* The !important flag is needed for a bug in Chrome for Android */
+    background-size: 210px 22px !important;
+    color:#fff;
+    display:block;
+    float:none;
+    margin:13px auto 0;
+    text-indent:-9999px;
+    min-width:210px;
+    height:22px;
+}
+
+.bookmarklet {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    width: 32px;
+    height: 32px;
+    background:url('../images/bookmark-icon.png') no-repeat 0 0;
+    background-size: contain;
+    text-indent: -9999px;
+}
 
 .container {
     padding-left: 10px;
@@ -307,5 +320,9 @@ article {
         background-image:url('../images/reader-logo@2x.png');
         background-repeat:no-repeat;
         background-position:50% 0;
+    }
+
+    .bookmarklet {
+        background-image:url('../images/bookmark-icon@2x.png');
     }
 }
