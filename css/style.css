@@ -217,6 +217,12 @@ article {
     .article-body a {
         color:#417fb5;
     }
+        .article-body a.embed-placeholder {
+            background:#EEFAFF url('../images/ico-embed-placeholder.png') no-repeat 4px center;
+            color:#0FA7EA;
+            font-weight:800;
+            padding:1px 2px 1px 36px;
+        }
 
     .article-body p, .article-body ul {
         margin: 0 0 1em 0;
@@ -316,7 +322,7 @@ article {
 
 /* Hi-DPI Media Query */
 @media only screen and (-webkit-min-device-pixel-ratio: 2) {
-     .navbar-brand {
+    .navbar-brand {
         background-image:url('../images/reader-logo@2x.png');
         background-repeat:no-repeat;
         background-position:50% 0;
@@ -324,5 +330,8 @@ article {
 
     .bookmarklet {
         background-image:url('../images/bookmark-icon@2x.png');
+    }
+    .article-body a.embed-placeholder {
+        background-image:url('../images/ico-embed-placeholder@2x.png');
     }
 }
