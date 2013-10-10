@@ -59,19 +59,32 @@ audio {
 .navbar {
     background:#222627;
     border-radius:0;
+    position: relative;
 }
-    .navbar-brand {
-        background:url('../images/reader-logo.png') no-repeat 50% 0;
-        /* The !important flag is needed for a bug in Chrome for Android */
-        background-size: 210px 22px !important;
-        color:#fff;
-        display:block;
-        float:none;
-        margin:13px auto 0;
-        text-indent:-9999px;
-        min-width:210px;
-        height:22px;
-    }
+
+.navbar-brand {
+    background:url('../images/reader-logo.png') no-repeat 50% 0;
+    /* The !important flag is needed for a bug in Chrome for Android */
+    background-size: 210px 22px !important;
+    color:#fff;
+    display:block;
+    float:none;
+    margin:13px auto 0;
+    text-indent:-9999px;
+    min-width:210px;
+    height:22px;
+}
+
+.bookmarklet {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    width: 32px;
+    height: 32px;
+    background:url('../images/bookmark-icon.png') no-repeat 0 0;
+    background-size: contain;
+    text-indent: -9999px;
+}
 
 .container {
     padding-left: 10px;
@@ -215,6 +228,12 @@ article {
     .article-body a {
         color:#417fb5;
     }
+        .article-body a.embed-placeholder {
+            background:#EEFAFF url('../images/ico-embed-placeholder.png') no-repeat 4px center;
+            color:#0FA7EA;
+            font-weight:800;
+            padding:1px 2px 1px 36px;
+        }
 
     .article-body p, .article-body ul {
         margin: 0 0 1em 0;
@@ -396,14 +415,19 @@ article {
 
 /* Hi-DPI Media Query */
 @media only screen and (-webkit-min-device-pixel-ratio: 2) {
-     .navbar-brand {
+    .navbar-brand {
         background-image:url('../images/reader-logo@2x.png');
         background-repeat:no-repeat;
         background-position:50% 0;
     }
     .audio-icon {
-    background:url('../images/audio-icon@2x.png') no-repeat 0 0;
-    background-size: contain;
-}
-
+        background:url('../images/audio-icon@2x.png') no-repeat 0 0;
+        background-size: contain;
+    }
+    .bookmarklet {
+        background-image:url('../images/bookmark-icon@2x.png');
+    }
+    .article-body a.embed-placeholder {
+        background-image:url('../images/ico-embed-placeholder@2x.png');
+    }
 }
