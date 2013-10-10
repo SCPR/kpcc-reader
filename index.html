@@ -59,7 +59,6 @@
 
           <p>{{{teaser}}}</p>
 
-
           <footer>
           </footer>
         </article>
@@ -98,23 +97,25 @@
       <footer>
         <a {{bindAttr href="public_url"}}>View this story on KPCC.org</a>
       </footer>
+
       <hr />
+
       <aside class="more-articles">
-      <ul>
-        <li class="prev-article">
-          <a href="#">
-            <h6>&larr; Older</h6>
-            <h4>Kabbalah Centre director Philip Berg has died</h4>
-          </a>
-        </li>
-        <li class="next-article">
-          <a href="#">
-            <h6>Newer &rarr;</h6>
-            <h4>With Syria tensions easing, will immigration reform pass this year?</h4>
-          </a>
-        </li>
-      </ul>
-    </aside>
+        <ul>
+          <li class="prev-article">
+            <a href="#" {{action previousArticle}}>
+              <h6>&larr; Newer</h6>
+              <h4>Previous Article</h4>
+            </a>
+          </li>
+          <li class="next-article">
+            <a href="#" {{action nextArticle}}>
+              <h6>Older &rarr;</h6>
+              <h4>Next Article</h4>
+            </a>
+          </li>
+        </ul>
+      </aside>
     </article>
   </script>
 
