@@ -48,8 +48,9 @@ audio {
 .audio-icon {
     display: inline-block;
     float: right;
-    width: 20px;
-    height: 20px;
+    width: 26px;
+    height: 26px;
+    margin-top:-4px;
     background:url('../images/audio-icon.png') no-repeat 0 0;
     background-size: contain;
     text-indent: -9999px;
@@ -114,6 +115,14 @@ audio {
     text-align:center;
     text-transform:uppercase;
     width:100%;
+    -webkit-animation: pulsate 0.6s ease-out;
+    -webkit-animation-iteration-count: infinite; 
+    opacity: 0.5;
+}
+@-webkit-keyframes pulsate {
+    0% {-webkit-transform: opacity: 0.5;}
+    50% {opacity: 1.0;}
+    100% {-webkit-transform:opacity: 0.5;}
 }
 
 /* ARTICLE STYLES */
@@ -150,7 +159,7 @@ article {
       article.compact p {
           color:#666;
           font-family:"Avenir Next", "Roboto", Helvetica, Arial, sans-serif;
-          font-size: 1.1em;
+          font-size: 0.9375em;
           line-height:1.4em;
       }
 
@@ -174,11 +183,6 @@ article {
               bottom:0;
               text-transform:uppercase;
           }
-
-      article.compact .link-follow {
-          color:#00b9f3;
-          font-weight:600;
-      }
 
     /* Full Article Styles*/
 
@@ -214,6 +218,13 @@ article {
         margin-bottom:2em;
     }
 
+    article.full hr {
+        background:#DEE4E5;
+        border:0;
+        height:1px;
+        margin-bottom:0;
+    }
+
     .article-body a {
         color:#417fb5;
     }
@@ -240,6 +251,54 @@ article {
             font-style:italic;
             line-height:1.8em;
         }
+
+    article.full .more-articles {
+        background:#F2F6F6;
+    }
+
+        article.full .more-articles ul {
+            list-style:none;
+            margin:0;
+            padding:0;
+            position:relative;
+        }
+
+            article.full .more-articles ul li {
+                margin:5px 0;
+            }
+
+                article.full .more-articles ul li:nth-child(1) {
+                    border-bottom:1px solid #DFE2E3;
+                }
+
+                article.full .more-articles ul li a {
+                    display:block;
+                    padding:10px;
+                }
+
+                article.full .more-articles ul li a:hover {
+                    background:#DEE4E5;
+                    text-decoration:none;
+                }
+                
+
+        article.full .more-articles h4 {
+            color:#1e1e1e;
+            font-size:1.4em;
+        }
+
+        article.full .more-articles h6 {
+            color:#6C7579;
+            font-family:"Avenir Next", Helvetica, sans-serif;
+            font-weight:400;
+            text-transform:uppercase;
+        }
+
+
+        article.full .more-articles .next-article h6 {
+            text-align: right;
+        }
+
 
 .thumbnail a {
     display: block;
@@ -272,9 +331,48 @@ article {
     }
 
     article.full {
-        margin:0 auto;
+        margin:0 auto 4em;
         max-width:650px;
     }
+
+        article.full hr {
+            margin-bottom:1em;
+        }
+        
+        article.full .more-articles {
+            background:transparent;
+        }
+
+        article.full .more-articles ul:after {
+              content: "";
+              display: table;
+              clear: both;
+        }
+        
+        article.full .more-articles ul:before {
+            background:#DEE4E5;
+            content:"";
+            display:block;
+            position:absolute;
+            left:50%;
+            top:0;
+            height:100px;
+            width:1px;
+        }
+
+            article.full .more-articles ul li {
+                float:left;
+                width:48%;
+            }
+
+                article.full .more-articles ul li:nth-child(1) {
+                    border-bottom:0;
+                    margin-right:4%;
+                }
+
+                article.full .more-articles h6 {
+                    color:#00b9f3;
+                }
 
     .article-body p, .article-body ul {
         line-height:1.7em;
@@ -315,11 +413,6 @@ article {
     }
 }
 
-@media (min-width:768px) and (max-width:1000px) {
-    article.compact {
-    }
-}
-
 /* Hi-DPI Media Query */
 @media only screen and (-webkit-min-device-pixel-ratio: 2) {
     .navbar-brand {
@@ -327,7 +420,10 @@ article {
         background-repeat:no-repeat;
         background-position:50% 0;
     }
-
+    .audio-icon {
+        background:url('../images/audio-icon@2x.png') no-repeat 0 0;
+        background-size: contain;
+    }
     .bookmarklet {
         background-image:url('../images/bookmark-icon@2x.png');
     }
