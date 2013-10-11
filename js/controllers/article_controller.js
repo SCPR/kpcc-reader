@@ -12,7 +12,7 @@ Kpcc.ArticleController = Ember.ObjectController.extend({
     shiftArticles: function(delta) {
         var articles, index;
 
-        articles = controller.get('articles');
+        articles = this.get('articles');
         index    = articles.indexOf(this.get('content')) + delta;
         console.log(articles, index, articles.indexOf(this.get('content')))
         if(index >= 0 && index <= articles.get('length') - 1) {
