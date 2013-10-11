@@ -103,16 +103,16 @@
       <aside class="more-articles">
         <ul>
           <li class="prev-article">
-            <a href="#" {{action previousArticle}}>
+            {{#linkTo 'article' previousArticle}}
               <h6>&larr; Newer</h6>
-              <h4>Previous Article</h4>
-            </a>
+              <h4>{{previousArticle.title}}</h4>
+            {{/linkTo}}
           </li>
           <li class="next-article">
-            <a href="#" {{action nextArticle}}>
+            {{#linkTo 'article' nextArticle}}
               <h6>Older &rarr;</h6>
-              <h4>Next Article</h4>
-            </a>
+              <h4>{{nextArticle.title}}</h4>
+            {{/linkTo}}
           </li>
         </ul>
       </aside>

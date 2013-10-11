@@ -2,25 +2,23 @@ Kpcc.ArticleController = Ember.ObjectController.extend({
     needs: ['articles'],
 
     nextArticle: function() {
-        var article = this.shiftArticles(1);
-        this.transitionToRoute('article', article)
-    },
+        return this.shiftArticles(1)
+    }.property('content'),
 
     previousArticle: function() {
-        var article = this.shiftArticles(-1);
-        this.transitionToRoute('article', article)
-    },
+        return this.shiftArticles(-1)
+    }.property('content'),
 
     shiftArticles: function(delta) {
         var articles, index;
 
-        articles = this.get('articles');
+        articles = controller.get('articles');
         index    = articles.indexOf(this.get('content')) + delta;
-
+        console.log(articles, index, articles.indexOf(this.get('content')))
         if(index >= 0 && index <= articles.get('length') - 1) {
             return articles.objectAt(index)
         } else {
-            return null;
+            return {};
         }
     },
 
