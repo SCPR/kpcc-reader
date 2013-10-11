@@ -100,22 +100,31 @@
 
       <hr />
 
+    {{#if shouldRenderNavigationLinks}}
       <aside class="more-articles">
         <ul>
+
           <li class="prev-article">
+          {{#if previousArticle}}
             {{#linkTo 'article' previousArticle}}
               <h6>&larr; Newer</h6>
               <h4>{{previousArticle.title}}</h4>
             {{/linkTo}}
+          {{/if}}
           </li>
+
           <li class="next-article">
+          {{#if nextArticle}}
             {{#linkTo 'article' nextArticle}}
               <h6>Older &rarr;</h6>
               <h4>{{nextArticle.title}}</h4>
             {{/linkTo}}
+          {{/if}}
           </li>
+
         </ul>
       </aside>
+    {{/if}}
     </article>
   </script>
 

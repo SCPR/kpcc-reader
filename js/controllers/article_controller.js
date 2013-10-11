@@ -1,6 +1,11 @@
 Kpcc.ArticleController = Ember.ObjectController.extend({
     needs: ['articles'],
 
+    shouldRenderNavigationLinks: function() {
+        return !!(this.get('nextArticle') || this.get('previousArticle'))
+    }.property('nextArticle', 'previousArticle'),
+
+
     nextArticle: function() {
         return this.shiftArticles(1)
     }.property('content'),
@@ -14,11 +19,9 @@ Kpcc.ArticleController = Ember.ObjectController.extend({
 
         articles = this.get('articles');
         index    = articles.indexOf(this.get('content')) + delta;
-        console.log(articles, index, articles.indexOf(this.get('content')))
+
         if(index >= 0 && index <= articles.get('length') - 1) {
             return articles.objectAt(index)
-        } else {
-            return {};
         }
     },
 
