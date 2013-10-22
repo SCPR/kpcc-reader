@@ -300,7 +300,8 @@ article {
         }
 
     .article-body p,
-    .article-body ul {
+    .article-body ul,
+    .article-body ol {
         margin: 0 0 1em 0;
         font-family: Georgia, "Droid Serif", serif;
         font-size: 1.31em;
@@ -387,7 +388,8 @@ article {
             }
 
     .article-body p,
-    .article-body ul {
+    .article-body ul,
+    .article-body ol {
         line-height:1.7em;
     }
 
