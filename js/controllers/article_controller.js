@@ -2,7 +2,8 @@ Kpcc.ArticleController = Ember.ObjectController.extend({
     needs: ['articles'],
 
     shouldRenderNavigationLinks: function() {
-        return !!(this.get('nextArticle') || this.get('previousArticle'))
+        // return !!(this.get('nextArticle') || this.get('previousArticle'))
+        return false
     }.property('nextArticle', 'previousArticle'),
 
 
