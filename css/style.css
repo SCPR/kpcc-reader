@@ -87,8 +87,8 @@ audio {
 }
 
 .container {
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
     max-width: 1390px;
     overflow: auto;
     -webkit-overflow-scrolling: touch;
@@ -303,10 +303,12 @@ article {
     .article-body p,
     .article-body ul,
     .article-body ol {
-        margin: 0 0 1em 0;
-        font-family: Georgia, "Droid Serif", serif;
-        font-size: 1.31em;
-        line-height:1.5em;
+        color:#404040;
+        font-family:Georgia, "Droid Serif", serif;
+        font-size:1.142857143em;
+        line-height:1.7em;
+        margin:0;
+        padding:10px 0;
     }
 
     .article-body blockquote {
@@ -391,7 +393,7 @@ article {
     .article-body p,
     .article-body ul,
     .article-body ol {
-        line-height:1.7em;
+        font-size:1.31em;
     }
 
     article.compact {
