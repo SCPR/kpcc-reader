@@ -48,11 +48,11 @@ audio {
 .audio-icon {
     display: inline-block;
     float: right;
-    width: 26px;
-    height: 26px;
+    width: 27px;
+    height: 27px;
     margin-top:-4px;
     background:url('../images/audio-icon.png') no-repeat 0 0;
-    background-size: contain;
+    background-size: 27px 27px;
     text-indent: -9999px;
 }
 
@@ -294,6 +294,7 @@ article {
 
         .article-body a.embed-placeholder {
             background:#EEFAFF url('../images/ico-embed-placeholder.png') no-repeat 4px center;
+            background-size:27px 19px;
             color:#0FA7EA;
             font-weight:800;
             padding:1px 2px 1px 36px;
@@ -442,6 +443,7 @@ article {
 
     .audio-icon {
         background:url('../images/audio-icon@2x.png') no-repeat 0 0;
+        background-size: 27px 27px;
     }
 
     .bookmarklet {
@@ -450,5 +452,6 @@ article {
 
     .article-body a.embed-placeholder {
         background-image:url('../images/ico-embed-placeholder@2x.png');
+        background-size:27px 19px;
     }
 }
