@@ -444,7 +444,7 @@ article {
 
 }
 
-@media (min-width:900px) {
+@media (min-width:900px) and (max-width:1599px) {
     .article-link {
         float:left;
         margin-right:3.3%;
@@ -459,6 +459,47 @@ article {
     .articles-list .article-link:nth-of-type(3n) {
         margin-right:0;
     }
+}
+
+@media (min-width:1600px) {
+    .container {
+        max-width:90%;
+    }
+
+    .article-link {
+        float:left;
+        margin-right:2%%;
+        width:23.5%;
+    }
+
+    article.compact {
+        min-height:500px;
+        max-height:500px;
+    }
+
+        article.compact .img-wrapper {
+            max-width:100%;
+        }
+
+    .articles-list .article-link:nth-of-type(4n) {
+        margin-right:0;
+    }
+
+    article.full {
+        max-width:729px;
+    }
+}
+
+@media (min-width:2000px) {
+    article.compact {
+        min-height:550px;
+        max-height:550px;
+    }
+
+        article.compact .img-wrapper {
+            max-height: 300px;
+            min-height: 300px;
+        }
 }
 
 /* Hi-DPI Media Query */
