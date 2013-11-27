@@ -20,7 +20,11 @@ Ember.Handlebars.registerHelper('asset', function(size) {
     caption = this.get('assets.firstObject.caption');
     owner = this.get('assets.firstObject.owner');
 
-    return new Handlebars.SafeString('<img src="'+url+'" alt="'+caption+'" /><figcaption><span>'+caption+'</span><mark>'+owner+'</mark></figcaption>');
+    return new Handlebars.SafeString(
+        '<img src="'+url+'" alt="'+caption+'" />' +
+        '<figcaption><span>'+caption+'</span>' +
+        '<mark>'+owner+'</mark></figcaption>'
+    );
 }, 'assets');
 
 
