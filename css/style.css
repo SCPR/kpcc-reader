@@ -28,6 +28,7 @@ h2 {
 }
 
 img {
+    display:block;
     max-width: 100%;
 }
 
@@ -187,6 +188,10 @@ article {
             position:relative;
         }
 
+            article.compact figure figcaption {
+                display:none;
+            }
+
             article.compact .img-wrapper .category {
                 background:#00b9f3;
                 color:#fff;
@@ -233,9 +238,67 @@ article {
                 text-transform:uppercase;
             }
 
-        article.full img {
+        article.full figure {
             margin-bottom:2em;
+            position:relative;
         }
+            article.full figure figcaption {
+                background:#fff; 
+                background:rgba(255,255,255,0.7);
+                display:block;
+                position:absolute;
+                right:0;
+                bottom:0;
+                width:36px;
+                height:36px;
+            }
+
+                article.full figure figcaption:after {
+                    color:#333;
+                    content:"+";
+                    font-size:2em;
+                    font-weight:300;
+                    position:absolute;
+                    left:8px;
+                    top:-3px;
+                }
+
+                article.full figure figcaption span {
+                    color:#333;
+                    display:none;
+                    font-size:0.8125em;
+                    line-height:1.3em;
+                }
+
+                article.full figure figcaption mark {
+                    background:transparent;
+                    color:#666;
+                    display:none;
+                    font-size:0.6875em;
+                    font-style:italic;
+                    margin-top:0.3em;
+                }
+
+            article.full figure figcaption:hover {
+                content:"";
+                padding:0.5em 0.5em 2em;
+                left:0;
+                right:0;
+                width:100%;
+                height:auto;
+            }
+
+                article.full figure figcaption:hover:after {
+                    content:"";
+                }
+
+                article.full figure figcaption:hover span {
+                    display:block;
+                }
+
+                article.full figure figcaption:hover mark {
+                    display:block;
+                }
 
         article.full hr {
             background:#DEE4E5;
@@ -330,6 +393,28 @@ article {
     article.compact .img-wrapper img {
         opacity:0;
     }
+
+    article.full figure figcaption {
+        content:"";
+        padding:0.5em;
+        left:0;
+        right:0;
+        width:100%;
+        height:auto;
+    }
+
+        article.full figure figcaption:after {
+            content:"";
+        }
+
+        article.full figure figcaption span {
+            display:block;          
+        }
+
+        article.full figure figcaption mark {
+            display:block;
+        }
+
 }
 @media (min-width:700px) and (max-width:899px) {
 

@@ -13,12 +13,18 @@ Ember.Handlebars.helper('date', function(date) {
 
 
 // {{asset String this}}
-// Returns the asset IMG tag for the requested size.
+// Returns the asset IMG tag for the requested size, along with caption and credit.
 Ember.Handlebars.registerHelper('asset', function(size) {
     var url;
     url = Ember.Handlebars.helpers.assetUrl.apply(this, [size]);
+    caption = this.get('assets.firstObject.caption');
+    owner = this.get('assets.firstObject.owner');
 
-    return new Handlebars.SafeString('<img src="'+url+'" />');
+    return new Handlebars.SafeString(
+        '<img src="'+url+'" alt="'+caption+'" />' +
+        '<figcaption><span>'+caption+'</span>' +
+        '<mark>'+owner+'</mark></figcaption>'
+    );
 }, 'assets');
 
 
