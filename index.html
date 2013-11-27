@@ -38,8 +38,8 @@
         <article class='compact'>
           <header>
             <figure class="img-wrapper" {{bindAttr style="imgWrapperStyle"}}>
-              
-              {{asset "small" this}}
+
+              {{asset "small" false this}}
 
               {{#if category}}
               <div class="category">
@@ -88,9 +88,9 @@
       </header>
 
       <figure>
-        {{asset "large" this}}
+        {{asset "large" true this}}
       </figure>
-      
+
       {{audio this}}
 
       <div class="article-body">

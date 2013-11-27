@@ -12,19 +12,24 @@ Ember.Handlebars.helper('date', function(date) {
 });
 
 
-// {{asset String this}}
-// Returns the asset IMG tag for the requested size, along with caption and credit.
-Ember.Handlebars.registerHelper('asset', function(size) {
-    var url;
-    url = Ember.Handlebars.helpers.assetUrl.apply(this, [size]);
-    caption = this.get('assets.firstObject.caption');
-    owner = this.get('assets.firstObject.owner');
+// {{asset String Boolean this}}
+// Returns the asset IMG tag for the requested size.
+// Arguments:
+// * size - String of the size to render
+// * showMeta - Boolean whether or not to show the meta data.
+Ember.Handlebars.registerHelper('asset', function(size, showMeta) {
+    var url         = Ember.Handlebars.helpers.assetUrl.apply(this, [size]),
+        caption     = this.get('assets.firstObject.caption'),
+        owner       = this.get('assets.firstObject.owner');
 
-    return new Handlebars.SafeString(
-        '<img src="'+url+'" alt="'+caption+'" />' +
-        '<figcaption><span>'+caption+'</span>' +
-        '<mark>'+owner+'</mark></figcaption>'
-    );
+    var html = '<img src="'+url+'" alt="'+caption+'" />';
+
+    if (showMeta) {
+        html += '<figcaption><span>'+caption+'</span>';
+        html += '<mark>'+owner+'</mark></figcaption>';
+    }
+
+    return new Handlebars.SafeString(html);
 }, 'assets');
 
 

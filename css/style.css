@@ -188,10 +188,6 @@ article {
             position:relative;
         }
 
-            article.compact figure figcaption {
-                display:none;
-            }
-
             article.compact .img-wrapper .category {
                 background:#00b9f3;
                 color:#fff;
@@ -243,7 +239,7 @@ article {
             position:relative;
         }
             article.full figure figcaption {
-                background:#fff; 
+                background:#fff;
                 background:rgba(255,255,255,0.7);
                 display:block;
                 position:absolute;
@@ -408,7 +404,7 @@ article {
         }
 
         article.full figure figcaption span {
-            display:block;          
+            display:block;
         }
 
         article.full figure figcaption mark {
