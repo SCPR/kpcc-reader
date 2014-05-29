@@ -10,7 +10,7 @@ Kpcc.ArticlesController = Ember.ArrayController.extend({
     // the API for some reason (deleted or unpublished).
     checkForNewRecords: function() {
         console.log("checking for new records");
-        Kpcc.Article.find({
+        this.store.find({
             page    : 1,
             limit   : this.get('limit'),
             type    : this.get('types')
@@ -25,7 +25,7 @@ Kpcc.ArticlesController = Ember.ArrayController.extend({
 
         var self = this;
 
-        Kpcc.Article.find({
+        this.store.find({
             page    : this.get('currentPage'),
             limit   : this.get('limit'),
             types   : this.get('types')
