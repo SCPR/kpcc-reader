@@ -1,7 +1,9 @@
 window.Kpcc = Ember.Application.create();
 
-Kpcc.ApplicationAdapter = DS.RESTAdapter.extend({
-    url         : "http://localhost:3000",
+Kpcc.ApplicationAdapter = DS.RESTAdapter
+
+DS.RESTAdapter.reopen({
+    host        : "http://localhost:3000",
     namespace   : "api/v3"
 });
 
