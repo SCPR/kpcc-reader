@@ -10,12 +10,12 @@ Kpcc.ArticleRoute = Ember.Route.extend({
 
         return controller.setProperties({
             model       : model,
-            articles    : this.store.all()
+            articles    : this.store.all('article')
         })
     },
 
     model: function(params) {
-        return this.store.find(params.article_id);
+        return this.store.find("article", params.article_id);
     }
 })
 
@@ -23,7 +23,7 @@ Kpcc.ArticleRoute = Ember.Route.extend({
 Kpcc.ArticlesRoute = Ember.Route.extend({
     model: function() {
         this.controllerFor('articles').loadMore()
-        return this.store.all()
+        return this.store.all("article")
     },
 
     activate: function() {
