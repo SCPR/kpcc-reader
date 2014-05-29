@@ -9,9 +9,7 @@ DS.RESTAdapter.reopen({
 
 Kpcc.ApplicationSerializer = DS.ActiveModelSerializer.extend({
     normalizePayload: function(payload) {
-        delete payload.version;
-        delete payload.status;
-
+        delete payload.meta;
         return payload;
     }
 });
