@@ -7,7 +7,7 @@ Kpcc.Article = DS.Model.extend({
     body            : DS.attr(),
     public_url      : DS.attr(),
     assets          : DS.hasMany('asset'),
-    audio           : DS.hasMany("audio"),
+    audio           : DS.attr(),
     category        : DS.belongsTo('category'),
 });
 
@@ -15,8 +15,7 @@ Kpcc.ArticleSerializer = Kpcc.ApplicationSerializer.extend(
     DS.EmbeddedRecordsMixin, {
         attrs: {
             assets      : { embedded: 'always' },
-            category    : { embedded: 'always' },
-            audio       : { embedded: 'always' }
+            category    : { embedded: 'always' }
         }
     }
 )
