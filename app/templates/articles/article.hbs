@@ -1,0 +1,59 @@
+{{!-- {{outlet}} --}}
+<article class="full">
+  <header>
+    {{#if category}}
+      <aside class="category">
+        <a href="{{unbound category.public_url}}">{{category.title}}</a>
+      </aside>
+    {{/if}}
+    <h2>{{title}}</h2>
+    <aside class="byline">
+      <ul>
+        <li>{{byline}}</li>
+        <li><time>{{date published_at}}</time></li>
+      </ul>
+    </aside>
+  </header>
+
+  <figure>
+    {{asset "large" true this}}
+  </figure>
+
+  {{audio this}}
+
+  <div class="article-body">
+    {{{body}}}
+  </div>
+
+  <footer>
+    <a {{bindAttr href="public_url"}}>View this story on KPCC.org</a>
+  </footer>
+
+  <hr />
+
+{{#if shouldRenderNavigationLinks}}
+  <aside class="more-articles">
+    <ul>
+
+      <li class="prev-article">
+      {{#if previousArticle}}
+        {{#link-to 'article' previousArticle}}
+          <h6>&larr; Newer</h6>
+          <h4>{{previousArticle.title}}</h4>
+        {{/link-to}}
+      {{/if}}
+      </li>
+
+      <li class="next-article">
+      {{#if nextArticle}}
+        {{#link-to 'article' nextArticle}}
+          <h6>Older &rarr;</h6>
+          <h4>{{nextArticle.title}}</h4>
+        {{/link-to}}
+      {{/if}}
+      </li>
+
+    </ul>
+  </aside>
+{{/if}}
+</article>

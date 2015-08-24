@@ -2,5 +2,12 @@
 
 Focus on the content.
 
+### Installation
+```npm install```
+```bower install```
+
 ### Usage
-Just open `index.html`. There is also a simple `Rack::Static` server provided, which you can run with `bundle exec rackup`.
+The easiest way to get up and running is to run the server using Ember CLI.
+```ember serve```
+
+If you build the project using ```ember build```, you can open `index.html` inside **/dist**.
