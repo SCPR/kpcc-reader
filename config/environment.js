@@ -7,8 +7,9 @@ module.exports = function(environment) {
     baseURL: '/',
     locationType: 'auto',
     contentSecurityPolicy: {
-      'img-src': "'self' a.scpr.org",
+      'img-src': "'self' a.scpr.org images.ibsys.com",
       'connect-src': "'self' www.scpr.org",
+      'style-src': "'self' 'unsafe-inline'"
     },
 
     EmberENV: {

@@ -1,4 +1,13 @@
 /* GLOBAL STYLES */
+@import 'bootstrap';
+
+.nav > li > a:hover, .nav > li > a:focus {
+    background-color: rgba(0,0,0,0);;
+}
+
+.nav.navbar-nav{
+    margin-left: 20px;
+}
 
 body {
     background:#e9edee;
@@ -63,13 +72,18 @@ audio {
     position: relative;
 }
 
+.navbar li a.navbar-link {
+    color: white;
+    text-shadow: none;
+}
+
 .navbar-brand {
     background:url('../images/reader-logo.png') no-repeat 50% 0;
     /* The !important flag is needed for a bug in Chrome for Android */
     background-size: 210px 22px !important;
     color:#fff;
     display:block;
-    float:none;
+    /*float:none;*/
     margin:13px auto 0;
     text-indent:-9999px;
     min-width:210px;
@@ -150,6 +164,16 @@ article {
     .article-link {
         display:block;
     }
+
+    article.compact.advertisement {
+        background-color: rgba(0,0,0,0);
+        border: none;
+    }
+
+    article.advertisement img {
+        width: 100%;
+    }
+
 
     /* Compact Article Styles*/
     article.compact {

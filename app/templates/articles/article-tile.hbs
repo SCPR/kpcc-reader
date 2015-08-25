@@ -1,0 +1,30 @@
+{{#link-to 'article' article classNames="article-link"}}
+  <article class='compact'>
+    <header>
+
+      <figure class="img-wrapper" style={{article.imgWrapperStyle}}>
+
+        {{asset "small" false article}}
+
+        {{#if article.category}}
+          <div class="category">
+              {{article.category.title}}
+          </div>
+        {{/if}}
+
+      </figure>
+
+      <time>{{relative-date article.published_at}}</time>
+      {{#if article.audio.length}}
+        <span class="audio-icon">Audio</span>
+      {{/if}}
+
+      <h4>{{article.short_title}}</h4>
+    </header>
+
+    <p>{{{article.teaser}}}</p>
+
+    <footer>
+    </footer>
+  </article>
+{{/link-to}}

@@ -3,7 +3,11 @@ var EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
 module.exports = function(defaults) {
   var app = new EmberApp(defaults, {
-    // Add options here
+    lessOptions: {
+      paths: [
+        'bower_components/bootstrap/less'
+      ]
+    }
   });
 
   // Use `app.import` to add additional libraries to the generated
@@ -20,7 +24,7 @@ module.exports = function(defaults) {
   // along with the exports of each module as its value.
 
   app.import('bower_components/jquery/dist/jquery.min.js');
-  app.import('bower_components/bootstrap/dist/css/bootstrap.min.css');
+  // app.import('bower_components/bootstrap/dist/css/bootstrap.min.css');
   app.import('bower_components/bootstrap/dist/css/bootstrap-theme.min.css');
   app.import('bower_components/bootstrap/dist/js/bootstrap.min.js');
   app.import('bower_components/moment/min/moment.min.js');
