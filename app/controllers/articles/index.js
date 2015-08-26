@@ -2,7 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
   currentPage     : 0,
-  limit           : 12,
+  limit           : 10,
   types           : "news,blogs,segments",
 
   sortAscending   : false,
@@ -34,7 +34,7 @@ export default Ember.Controller.extend({
       limit   : this.get('limit'),
       types   : this.get('types')
 
-    }).then(function(){
+    }).then(function(x){
       self.set('isLoading', false);
     });
   },

@@ -1,8 +1,28 @@
 /* GLOBAL STYLES */
-@import 'bootstrap';
+// @import 'bootstrap';
+// @import 'bootstrap-theme.css';
 
-.nav > li > a:hover, .nav > li > a:focus {
-    background-color: rgba(0,0,0,0);;
+nav li a.navbar-link:hover, nav li a.navbar-link:focus {
+    background-color: #353535;
+}
+
+nav li#listen-live a {
+    background: url('http://localhost:4200/images/antenna.png') no-repeat 8px 8px !important;
+    padding-left: 35px;
+}
+
+.nav>li#listen-live>a:focus, .nav>li#listen-live>a:hover{
+    background-color: rgba(0,0,0,0) !important;
+}
+
+
+
+nav .container {
+    margin-bottom: -1px;
+}
+
+nav li#listen-live a {
+    color: white;
 }
 
 .nav.navbar-nav{
@@ -14,6 +34,7 @@ body {
     font-family:"Avenir Next", "Roboto", Helvetica, Arial, sans-serif;
     font-size:14px;
     text-rendering: optimizeLegibility;
+    padding-top: 70px; /* for fixed navbar */
 }
 
     body.article {
@@ -69,7 +90,7 @@ audio {
 .navbar {
     background:#222627;
     border-radius:0;
-    position: relative;
+    // position: relative;
 }
 
 .navbar li a.navbar-link {
@@ -78,9 +99,9 @@ audio {
 }
 
 .navbar-brand {
-    background:url('../images/reader-logo.png') no-repeat 50% 0;
+    background:url('../images/logo.png') no-repeat 50% 0;
     /* The !important flag is needed for a bug in Chrome for Android */
-    background-size: 210px 22px !important;
+    background-size: 181px 42px !important;
     color:#fff;
     display:block;
     /*float:none;*/
@@ -167,6 +188,10 @@ article {
 
     article.compact.advertisement {
         background-color: rgba(0,0,0,0);
+        border: none;
+    }
+
+    article.compact.advertisement:hover {
         border: none;
     }
 
@@ -436,13 +461,13 @@ article {
         }
 
 }
-@media (min-width:700px) and (max-width:899px) {
+// @media (min-width:700px) and (max-width:899px) {
 
-    .articles-list .article-link:nth-of-type(2n) {
-        margin-right:0;
-    }
+//     .articles-list .article-link:nth-of-type(2n) {
+//         margin-right:0;
+//     }
 
-}
+// }
 
 @media (min-width:700px) {
     body {
@@ -454,15 +479,15 @@ article {
         padding-left:20px;
     }
 
-    .article-link {
-        margin-right:4%;
-        float:left;
-        width:48%;
-    }
+    // .article-link {
+    //     margin-right:4%;
+    //     float:left;
+    //     width:48%;
+    // }
 
     article.compact {
-        max-height:530px;
-        min-height:530px;
+        // max-height:530px;
+        // min-height:530px;
         overflow:hidden;
     }
 
@@ -610,7 +635,7 @@ article {
 /* Hi-DPI Media Query */
 @media only screen and (-webkit-min-device-pixel-ratio: 2) {
     .navbar-brand {
-        background-image:url('../images/reader-logo@2x.png');
+        background-image:url('../images/logo@2x.png');
         background-repeat:no-repeat;
         background-position:50% 0;
     }

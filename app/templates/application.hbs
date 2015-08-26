@@ -1,39 +1,23 @@
-<div class="navbar">
+<nav class="navbar navbar-fixed-top" role="navigation">
+  <div class="container">
   <a class="navbar-brand" href="#">KPCC Reader</a>
 {{!--   <a class="pull-right bookmarklet" href="javascript:(function()%7Bvar url,newWin%3Btry%7Bif(url%3DgetReaderUrl())newWin%3Dwindow.open(url,%27reader-%27%2B(new Date().getTime()/1000))%7Dcatch(e)%7Bif(newWin)%7BnewWin.close()%7D%3Balert(%27This function is not available on this page.%27)%3B%7D%7D)()%3B" title="Bookmarklet to open an article in Reader from KPCC.org">Open in Reader</a> --}}
   <ul class="nav navbar-nav">
-    <li><a href="#" class="btn btn-warning">LISTEN LIVE<span class="sr-only">(current)</span></a></li>
-    <li class="dropdown">
-              <a href="#" class="dropdown-toggle navbar-link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">NEWS</a>
-              <ul class="dropdown-menu">
-            <div class="span12">
-              <ul>
-                <li><a class="" href="/local" class="track-event" data-ga-category="MegaMenu" data-ga-action="Category" data-ga-label="News">Local</a></li>
-                <li><a class="" href="/world" class="track-event" data-ga-category="MegaMenu" data-ga-action="Category" data-ga-label="News">US &amp; World</a></li>
-                <li><a class="" href="/politics" class="track-event" data-ga-category="MegaMenu" data-ga-action="Category" data-ga-label="News">Politics</a></li>
-                <li><a class="" href="/environment" class="track-event" data-ga-category="MegaMenu" data-ga-action="Category" data-ga-label="News">Science</a></li>
-                <li><a class="" href="/arts" class="track-event" data-ga-category="MegaMenu" data-ga-action="Category" data-ga-label="News">Arts &amp; Entertainment</a></li>
-              </ul>
-            </div>
-
-            <div class="span12">
-              <ul>
-                <li><a href="/business" class="track-event" data-ga-category="MegaMenu" data-ga-action="Category" data-ga-label="News">Business</a></li>
-                <li><a href="/crime" class="track-event" data-ga-category="MegaMenu" data-ga-action="Category" data-ga-label="News">Crime &amp; Justice</a></li>
-                <li><a href="/education" class="track-event" data-ga-category="MegaMenu" data-ga-action="Category" data-ga-label="News">Education</a></li>
-                <li><a href="/health" class="track-event" data-ga-category="MegaMenu" data-ga-action="Category" data-ga-label="News">Health</a></li>
-                <li><a href="/immigration" class="track-event" data-ga-category="MegaMenu" data-ga-action="Category" data-ga-label="News">Emerging Communities</a></li>
-              </ul>
-            </div>
-              </ul>
-            </li>
-    <li><a class="navbar-link" href="#">PROGRAMS<span class="sr-only">(current)</span></a></li>
-    <li><a class="navbar-link" href="#">EVENTS<span class="sr-only">(current)</span></a></li>
-    <li><a class="navbar-link" href="#">SUPPORT US<span class="sr-only">(current)</span></a></li>
-    <li><a class="navbar-link" href="#">ABOUT US<span class="sr-only">(current)</span></a></li>
+    <script>
+      var open_popup = function(url){
+        window.open(url, 'pop_up', 'height=850,' + 'width=556,' + 'resizable,' + 'left=10,' + 'top=10,' + 'scrollbars=yes,' + 'toolbar=no');
+      }
+    </script>
+    <li id="listen-live" class="btn-warning"><a href="javascript:void(0)" onclick="open_popup('http://scpr.org/listen_live/');" >LISTEN LIVE</a></li>
+    <li><a class="navbar-link" href="http://scpr.org/news">NEWS</a></li>
+    <li><a class="navbar-link" href="http://scpr.org/programs">PROGRAMS</a></li>
+    <li><a class="navbar-link" href="http://scpr.org/events">EVENTS</a></li>
+    <li><a class="navbar-link" href="http://scpr.org/support">SUPPORT US</a></li>
+    <li><a class="navbar-link" href="http://scpr.org/about">ABOUT US</a></li>
   </ul>
-</div>
+  </div>
+</nav>
 
-<div class="container">
+<div class="container-fluid">
   {{outlet}}
 </div>

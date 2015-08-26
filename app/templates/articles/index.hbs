@@ -3,6 +3,9 @@
   {{#each model as |article index|}}
     {{partial "articles/article-tile"}}
     {{#if (is-equal index 1)}}
+      {{partial "articles/sponsor-tile"}}
+    {{/if}}
+    {{#if (is-equal index 3)}}
       {{partial "articles/donate-tile"}}
     {{/if}}
   {{/each}}

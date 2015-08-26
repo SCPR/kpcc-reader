@@ -24,13 +24,14 @@ module.exports = function(defaults) {
   // along with the exports of each module as its value.
 
   app.import('bower_components/jquery/dist/jquery.min.js');
-  // app.import('bower_components/bootstrap/dist/css/bootstrap.min.css');
+  app.import('bower_components/bootstrap/dist/css/bootstrap.min.css');
   app.import('bower_components/bootstrap/dist/css/bootstrap-theme.min.css');
   app.import('bower_components/bootstrap/dist/js/bootstrap.min.js');
   app.import('bower_components/moment/min/moment.min.js');
   app.import('bower_components/spin/stylesheets/jquery.spin.css');
   app.import('bower_components/spin/javascripts/jquery.spin.js');
   app.import('bower_components/loader.js/loader.js');
+  app.import('bower_components/sugar/release/sugar-full.development.js');
   app.import('bower_components/bootstrap/fonts/glyphicaons-halflings-regular.ttf', {
     destDir: 'fonts'
   });
