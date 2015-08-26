@@ -1,4 +1,5 @@
-{{#link-to 'article' article classNames="article-link"}}
+{{!-- {{#link-to 'article' article classNames="article-link"}} --}}
+<a target="_blank" class="article-link" {{bindAttr href="article.public_url"}}>
   <article class='compact'>
     <header>
 
@@ -27,4 +28,5 @@
     <footer>
     </footer>
   </article>
-{{/link-to}}
+{{!-- {{/link-to}} --}}
+</a>
