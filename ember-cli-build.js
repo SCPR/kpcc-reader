@@ -26,6 +26,7 @@ module.exports = function(defaults) {
   app.import('bower_components/jquery/dist/jquery.min.js');
   app.import('bower_components/bootstrap/dist/css/bootstrap.min.css');
   app.import('bower_components/bootstrap/dist/css/bootstrap-theme.min.css');
+  app.import('bower_components/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js');
   app.import('bower_components/bootstrap/dist/js/bootstrap.min.js');
   app.import('bower_components/moment/min/moment.min.js');
   app.import('bower_components/spin/stylesheets/jquery.spin.css');
