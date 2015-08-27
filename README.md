@@ -17,6 +17,7 @@ You will need:
 
 ### Usage
 The easiest way to get up and running is to run the server using Ember CLI.
+
 ```ember serve```
 
 Then visit ```localhost:4200```.
