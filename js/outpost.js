@@ -18,7 +18,7 @@ window.openCMS = function(newWin) {
     matcher = res[_i];
     if (match = matcher.re.exec(hash)) {
       id = match[1];
-      redirectUrl = "http://www.scpr.org/outpost/" + matcher.cmsPath + "/" + id + "/edit";
+      redirectUrl = "https://www.scpr.org/outpost/" + matcher.cmsPath + "/" + id + "/edit";
       break;
     }
   }

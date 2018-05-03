@@ -3,7 +3,7 @@ window.Kpcc = Ember.Application.create();
 Kpcc.ApplicationAdapter = DS.RESTAdapter;
 
 DS.RESTAdapter.reopen({
-    host        : "http://www.scpr.org",
+    host        : "https://www.scpr.org",
     namespace   : "api/v3"
 });
 
